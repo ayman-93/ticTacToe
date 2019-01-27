@@ -48,7 +48,10 @@ function play(event) {
       $(square).addClass("x");
       let value = $(square).text();
       playerOne.stack.push(value);
-      if (checkWin(playerOne.stack)) console.log("We have a winer");
+      if (checkWin(playerOne.stack)) {
+        console.log("We have a winer");
+        $(".result").slideDown();
+      }
       console.log("Turn changed to player two");
       playerOne.turn = false;
     }
@@ -59,7 +62,10 @@ function play(event) {
       $(square).addClass("o");
       let value = $(square).text();
       playerTwo.stack.push(value);
-      if (checkWin(playerTwo.stack)) console.log("We have a winer");
+      if (checkWin(playerTwo.stack)) {
+        console.log("We have a winer");
+        $(".result").slideDown();
+      }
       console.log("Turn changed to player one");
       playerOne.turn = true;
     }

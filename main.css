@@ -6,7 +6,7 @@
   flex-wrap: wrap;
   width: 456px;
   /* height: 600px; */
-  margin: 0 auto;
+  margin: 50px auto;
 }
 
 .square {
@@ -21,4 +21,19 @@
 
 .o {
   background: blue;
+}
+
+.result {
+  border: 2px solid blue;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.7);
+  width: 456px;
+  height: 453px;
+  display: none;
+}
+
+p {
+  margin-top: 50px;
+  font-size: 30px;
+  text-align: center;
 }
