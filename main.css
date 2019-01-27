@@ -87,9 +87,22 @@ p {
   text-align: center;
 }
 
-/* .score {
-  clear: both;
-  height: 200px;
-  width: 200px;
-  border: 2px solid red;
-} */
+.score {
+  display: none;
+  position: absolute;
+  left: 90px;
+  top: 500px;
+  /* z-index: -40; */
+  height: 150px;
+  width: 456px;
+  /* border: 2px solid red; */
+}
+
+.score p {
+  text-align: left;
+  color: white;
+}
+.score h3 {
+  color: antiquewhite;
+  text-align: center;
+}

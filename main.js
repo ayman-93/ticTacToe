@@ -141,7 +141,14 @@ function tie() {
 function startGame() {
   playerOne.name = $("#playerOneN").val();
   playerTwo.name = $("#playerTwoN").val();
+  let score = $(".score");
+  score.append(
+    `<p id='scoreOne' >${playerOne.name}: ${
+      playerOne.wins
+    }</p><p id='scoreTwo'>${playerTwo.name}: ${playerTwo.wins}</p>`
+  );
   $(".ready").slideUp();
+  score.slideDown();
   console.log(playerOne.name);
   console.log(playerTwo.name);
 }
@@ -152,6 +159,12 @@ function playAgain() {
   $(".square").removeClass("x");
   $(".square").removeClass("o");
   $(".result").slideUp();
+  $("#scoreOne").replaceWith(
+    `<p id='scoreOne'>${playerOne.name}: ${playerOne.wins}</p>`
+  );
+  $("#scoreTwo").replaceWith(
+    `<p id='scoreTwo'>${playerTwo.name}: ${playerTwo.wins}</p>`
+  );
 }
 
 let playArea = $(".playing");
