@@ -1,0 +1,22 @@
+.playArea {
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  width: 456px;
+  /* height: 600px; */
+  margin: 0 auto;
+}
+
+.square {
+  height: 150px;
+  width: 150px;
+  border: 1px solid;
+}
+
+.x {
+}
+
+.o {
+}
