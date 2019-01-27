@@ -1,3 +1,6 @@
+body {
+  background: rgb(8, 39, 44);
+}
 .playArea {
   border: 1px solid red;
   display: flex;
@@ -46,7 +49,7 @@
   align-self: center;
   width: 200px;
 }
-#start {
+button {
   margin: 50px auto;
   align-self: center;
   width: 200px;
@@ -54,6 +57,10 @@
 .result {
   background: rgba(255, 255, 255, 0.7);
   display: none;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  flex-direction: column;
 }
 
 p {

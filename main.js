@@ -49,6 +49,14 @@ function play(event) {
       playerOne.stack.push(value);
       if (checkWin(playerOne.stack)) {
         console.log("We have a winer");
+        playerOne.wins++;
+        $("#playerName").replaceWith(
+          "<p id='playerName'>The winner is " + playerOne.name + "</p>"
+        );
+        $("#wins").replaceWith(
+          "<p id='wins'>Number of wins: " + playerOne.wins + "</p>"
+        );
+
         $(".result").slideDown();
       }
       console.log("Turn changed to player two");
@@ -63,6 +71,13 @@ function play(event) {
       playerTwo.stack.push(value);
       if (checkWin(playerTwo.stack)) {
         console.log("We have a winer");
+        playerTwo.wins++;
+        $("#playerName").replaceWith(
+          "<p id='playerName'>The winner is " + playerTwo.name + "</p>"
+        );
+        $("#wins").replaceWith(
+          "<p id='wins'>Number of wins: " + playerTwo.wins + "</p>"
+        );
         $(".result").slideDown();
       }
       console.log("Turn changed to player one");
