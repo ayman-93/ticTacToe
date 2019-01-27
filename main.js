@@ -14,12 +14,22 @@ let playArea = $(".playArea");
 function play(event) {
   let square = event.target;
   if (playerOne.turn) {
-    console.log(square);
-    $(square).addClass("x");
-    playerOne.turn = false;
+    // console.log(square);
+    if ($(square).hasClass("x") || $(square).hasClass("o")) {
+      console.log("play some thing else");
+    } else {
+      $(square).addClass("x");
+      console.log("Turn changed to player two");
+      playerOne.turn = false;
+    }
   } else {
-    $(square).addClass("o");
-    playerOne.turn = true;
+    if ($(square).hasClass("x") || $(square).hasClass("o")) {
+      console.log("play some thing else");
+    } else {
+      $(square).addClass("o");
+      console.log("Turn changed to player one");
+      playerOne.turn = true;
+    }
   }
 }
 
