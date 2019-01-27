@@ -1,3 +1,4 @@
+//Each player has an object
 let playerOne = {
   name: "",
   stack: [],
@@ -11,7 +12,7 @@ let playerTwo = {
   wins: 0,
   turn: false
 };
-
+//functuon to check the winner every time somone play its run
 function checkWin(playerStack) {
   let winPattrens = [
     ["1", "2", "3"],
@@ -36,7 +37,45 @@ function checkWin(playerStack) {
     match = 0;
   }
 }
+//to check if the game is tie it's run after all the square is played
+function tie() {
+  if (
+    (playerOne.stack.length === 5 && playerTwo.stack.length === 4) ||
+    (playerOne.stack.length === 4 && playerTwo.stack.length === 5)
+  )
+    return true;
+}
 
+//this function take the players names and slide up the first layer its run on the beginning of the game only
+function startGame() {
+  playerOne.name = $("#playerOneN").val();
+  playerTwo.name = $("#playerTwoN").val();
+  let score = $(".score");
+  score.append(
+    `<p id='scoreOne' >${playerOne.name}: ${
+      playerOne.wins
+    }</p><p id='scoreTwo'>${playerTwo.name}: ${playerTwo.wins}</p>`
+  );
+  $(".ready").slideUp();
+  score.slideDown();
+  console.log(playerOne.name);
+  console.log(playerTwo.name);
+}
+//this function reset play area and the players stacks and update the scores
+function playAgain() {
+  playerOne.stack = [];
+  playerTwo.stack = [];
+  $(".square").removeClass("x");
+  $(".square").removeClass("o");
+  $(".result").slideUp();
+  $("#scoreOne").replaceWith(
+    `<p id='scoreOne'>${playerOne.name}: ${playerOne.wins}</p>`
+  );
+  $("#scoreTwo").replaceWith(
+    `<p id='scoreTwo'>${playerTwo.name}: ${playerTwo.wins}</p>`
+  );
+}
+//this is the main function
 function play(event) {
   let square = event.target;
   let win = $("#win");
@@ -44,24 +83,28 @@ function play(event) {
   let woosh = $("#woosh");
   if (playerOne.turn) {
     // console.log(square);
+    //to check if the plce have been played before
     if ($(square).hasClass("x") || $(square).hasClass("o")) {
       console.log("play some thing else");
     } else {
       tic.trigger("play");
       $(square).addClass("x");
       let value = square.id;
+      //add the played square to the player stack
       playerOne.stack.push(value);
       if (checkWin(playerOne.stack)) {
         console.log("We have a winer");
         win.trigger("play");
+        //inctrement the number of wins.
         playerOne.wins++;
+        //to update the result bord with the winner name and number of wins.
         $("#playerName").replaceWith(
           "<p id='playerName'>The winner is " + playerOne.name + "</p>"
         );
         $("#wins").replaceWith(
           "<p id='wins'>Number of wins: " + playerOne.wins + "</p>"
         );
-
+        //to slide down(show) the result
         $(".result").slideDown({
           start: function() {
             $(this).css({
@@ -128,43 +171,6 @@ function play(event) {
       playerOne.turn = true;
     }
   }
-}
-
-function tie() {
-  if (
-    (playerOne.stack.length === 5 && playerTwo.stack.length === 4) ||
-    (playerOne.stack.length === 4 && playerTwo.stack.length === 5)
-  )
-    return true;
-}
-
-function startGame() {
-  playerOne.name = $("#playerOneN").val();
-  playerTwo.name = $("#playerTwoN").val();
-  let score = $(".score");
-  score.append(
-    `<p id='scoreOne' >${playerOne.name}: ${
-      playerOne.wins
-    }</p><p id='scoreTwo'>${playerTwo.name}: ${playerTwo.wins}</p>`
-  );
-  $(".ready").slideUp();
-  score.slideDown();
-  console.log(playerOne.name);
-  console.log(playerTwo.name);
-}
-
-function playAgain() {
-  playerOne.stack = [];
-  playerTwo.stack = [];
-  $(".square").removeClass("x");
-  $(".square").removeClass("o");
-  $(".result").slideUp();
-  $("#scoreOne").replaceWith(
-    `<p id='scoreOne'>${playerOne.name}: ${playerOne.wins}</p>`
-  );
-  $("#scoreTwo").replaceWith(
-    `<p id='scoreTwo'>${playerTwo.name}: ${playerTwo.wins}</p>`
-  );
 }
 
 let playArea = $(".playing");
