@@ -9,16 +9,29 @@
   </head>
   <body>
     <div class="playArea">
-      <div class="square">1</div>
-      <div class="square">2</div>
-      <div class="square">3</div>
-      <div class="square">4</div>
-      <div class="square">5</div>
-      <div class="square">6</div>
-      <div class="square">7</div>
-      <div class="square">8</div>
-      <div class="square">9</div>
-      <div class="result"><p>The winner is Player one</p></div>
+      <div class="layer playing">
+        <div class="square">1</div>
+        <div class="square">2</div>
+        <div class="square">3</div>
+        <div class="square">4</div>
+        <div class="square">5</div>
+        <div class="square">6</div>
+        <div class="square">7</div>
+        <div class="square">8</div>
+        <div class="square">9</div>
+      </div>
+      <div class="layer ready">
+        <p>Enter Names</p>
+        <p>PLayer One:</p>
+        <input type="text" class="field" id="playerOneN" />
+        <p>PLayer Two:</p>
+        <input type="text" class="field" id="playerTwoN" />
+        <button id="start">Start</button>
+      </div>
+      <div class="layer result">
+        <p>The winner is Player one</p>
+        <button id="playAgain">Play again</button>
+      </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>

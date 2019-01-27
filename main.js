@@ -20,7 +20,7 @@ function checkWin(playerStack) {
     ["1", "4", "7"],
     ["2", "5", "8"],
     ["3", "6", "9"],
-    ["1", "3", "9"],
+    ["1", "5", "9"],
     ["3", "5", "7"]
   ];
   let match = 0;
@@ -36,7 +36,6 @@ function checkWin(playerStack) {
     match = 0;
   }
 }
-let playArea = $(".playArea");
 
 function play(event) {
   let square = event.target;
@@ -72,4 +71,27 @@ function play(event) {
   }
 }
 
+function startGame() {
+  playerOne.name = $("#playerOneN").val();
+  playerTwo.name = $("#playerTwoN").val();
+  $(".ready").slideUp();
+  console.log(playerOne.name);
+  console.log(playerTwo.name);
+}
+
+function playAgain() {
+  playerOne.stack = [];
+  playerTwo.stack = [];
+  $(".square").removeClass("x");
+  $(".square").removeClass("o");
+  $(".result").slideUp();
+}
+
+let playArea = $(".playing");
 playArea.on("click", play);
+
+let start = $("#start");
+start.on("click", startGame);
+
+let again = $("#playAgain");
+again.on("click", playAgain);

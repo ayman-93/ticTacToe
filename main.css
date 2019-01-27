@@ -22,13 +22,37 @@
 .o {
   background: blue;
 }
-
-.result {
+.layer {
   border: 2px solid blue;
   position: absolute;
-  background: rgba(255, 255, 255, 0.7);
   width: 456px;
   height: 453px;
+}
+.playing {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+.ready {
+  background: rgba(255, 255, 255, 0.7);
+  /* display: none; */
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  flex-direction: column;
+}
+.field {
+  align-self: center;
+  width: 200px;
+}
+#start {
+  margin: 50px auto;
+  align-self: center;
+  width: 200px;
+}
+.result {
+  background: rgba(255, 255, 255, 0.7);
   display: none;
 }
 
