@@ -2,8 +2,8 @@ body {
   background: rgb(8, 39, 44);
 }
 .playArea {
-  border: 1px solid red;
-  display: flex;
+  /* border: 1px solid red; */
+  /* display: flex; */
   justify-content: center;
   align-content: center;
   flex-wrap: wrap;
@@ -15,56 +15,81 @@ body {
 .square {
   height: 150px;
   width: 150px;
-  border: 1px solid;
+  /* border: 1px solid; */
 }
 
 .x {
-  background: red;
+  background: url("img/x.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-size: 78%;
 }
 
 .o {
-  background: blue;
+  background: url("img/o.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-size: 78%;
 }
+
 .layer {
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   position: absolute;
   width: 456px;
   height: 453px;
 }
 .playing {
   display: flex;
+  background: url("img/Tic-tac-toe.png");
+  background-size: cover;
   justify-content: center;
   align-content: center;
   flex-wrap: wrap;
 }
 .ready {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.3);
   /* display: none; */
   display: flex;
-  justify-content: space-around;
+  /* flex-wrap: wrap; */
+  /* justify-content: space-around; */
   align-content: center;
   flex-direction: column;
 }
 .field {
   align-self: center;
   width: 200px;
+  height: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
 }
 button {
+  /* border: 1px solid red; */
+  margin-bottom: 50px;
   margin: 50px auto;
   align-self: center;
+  border-radius: 5px;
+  height: 40px;
   width: 200px;
 }
 .result {
-  background: rgba(255, 255, 255, 0.7);
-  display: none;
+  background: rgba(255, 255, 255, 0.3);
   display: flex;
   justify-content: space-around;
   align-content: center;
   flex-direction: column;
+  display: none;
 }
 
 p {
-  margin-top: 50px;
-  font-size: 30px;
+  /* border: 1px solid black; */
+  /* margin-top: 50px; */
+  font-size: 25px;
   text-align: center;
 }
+
+/* .score {
+  clear: both;
+  height: 200px;
+  width: 200px;
+  border: 2px solid red;
+} */

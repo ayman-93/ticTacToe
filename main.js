@@ -39,16 +39,21 @@ function checkWin(playerStack) {
 
 function play(event) {
   let square = event.target;
+  let win = $("#win");
+  let tic = $("#tic");
+  let woosh = $("#woosh");
   if (playerOne.turn) {
     // console.log(square);
     if ($(square).hasClass("x") || $(square).hasClass("o")) {
       console.log("play some thing else");
     } else {
+      tic.trigger("play");
       $(square).addClass("x");
-      let value = $(square).text();
+      let value = square.id;
       playerOne.stack.push(value);
       if (checkWin(playerOne.stack)) {
         console.log("We have a winer");
+        win.trigger("play");
         playerOne.wins++;
         $("#playerName").replaceWith(
           "<p id='playerName'>The winner is " + playerOne.name + "</p>"
@@ -57,7 +62,25 @@ function play(event) {
           "<p id='wins'>Number of wins: " + playerOne.wins + "</p>"
         );
 
-        $(".result").slideDown();
+        $(".result").slideDown({
+          start: function() {
+            $(this).css({
+              display: "flex"
+            });
+          }
+        });
+      } else if (tie()) {
+        console.log("TIE");
+        $("#playerName").text("");
+        $("#wins").replaceWith("<p id='wins'>TIE</p>");
+
+        $(".result").slideDown({
+          start: function() {
+            $(this).css({
+              display: "flex"
+            });
+          }
+        });
       }
       console.log("Turn changed to player two");
       playerOne.turn = false;
@@ -66,11 +89,14 @@ function play(event) {
     if ($(square).hasClass("x") || $(square).hasClass("o")) {
       console.log("play some thing else");
     } else {
+      woosh.trigger("play");
       $(square).addClass("o");
-      let value = $(square).text();
+      let value = square.id;
       playerTwo.stack.push(value);
       if (checkWin(playerTwo.stack)) {
         console.log("We have a winer");
+
+        win.trigger("play");
         playerTwo.wins++;
         $("#playerName").replaceWith(
           "<p id='playerName'>The winner is " + playerTwo.name + "</p>"
@@ -78,12 +104,38 @@ function play(event) {
         $("#wins").replaceWith(
           "<p id='wins'>Number of wins: " + playerTwo.wins + "</p>"
         );
-        $(".result").slideDown();
+        $(".result").slideDown({
+          start: function() {
+            $(this).css({
+              display: "flex"
+            });
+          }
+        });
+      } else if (tie()) {
+        console.log("TIE");
+        $("#playerName").text("");
+        $("#wins").replaceWith("<p id='wins'>TIE</p>");
+
+        $(".result").slideDown({
+          start: function() {
+            $(this).css({
+              display: "flex"
+            });
+          }
+        });
       }
       console.log("Turn changed to player one");
       playerOne.turn = true;
     }
   }
+}
+
+function tie() {
+  if (
+    (playerOne.stack.length === 5 && playerTwo.stack.length === 4) ||
+    (playerOne.stack.length === 4 && playerTwo.stack.length === 5)
+  )
+    return true;
 }
 
 function startGame() {

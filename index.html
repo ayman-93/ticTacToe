@@ -10,18 +10,18 @@
   <body>
     <div class="playArea">
       <div class="layer playing">
-        <div class="square">1</div>
-        <div class="square">2</div>
-        <div class="square">3</div>
-        <div class="square">4</div>
-        <div class="square">5</div>
-        <div class="square">6</div>
-        <div class="square">7</div>
-        <div class="square">8</div>
-        <div class="square">9</div>
+        <div class="square" id="1"></div>
+        <div class="square" id="2"></div>
+        <div class="square" id="3"></div>
+        <div class="square" id="4"></div>
+        <div class="square" id="5"></div>
+        <div class="square" id="6"></div>
+        <div class="square" id="7"></div>
+        <div class="square" id="8"></div>
+        <div class="square" id="9"></div>
       </div>
       <div class="layer ready">
-        <p>Enter Names</p>
+        <h2>Enter Names:</h2>
         <p>PLayer One:</p>
         <input type="text" class="field" id="playerOneN" />
         <p>PLayer Two:</p>
@@ -34,6 +34,11 @@
         <button id="playAgain">Play again</button>
       </div>
     </div>
+    <!-- <div class="score"></div> -->
+    <audio id="tic" src="sound/tic.mp3"></audio>
+    <audio id="woosh" src="sound/woosh.mp3"></audio>
+    <audio id="win2" src="sound/win1.wav"></audio>
+    <audio id="win" src="sound/win2.mp3"></audio>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="main.js"></script>
