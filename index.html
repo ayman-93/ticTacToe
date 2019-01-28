@@ -24,8 +24,13 @@
         <h2>Enter Names:</h2>
         <p>PLayer One:</p>
         <input type="text" class="field" id="playerOneN" />
-        <p>PLayer Two:</p>
+        <p id="playerTwoLable">Player Two:</p>
         <input type="text" class="field" id="playerTwoN" />
+        <form id="myForm">
+          <input name="playType" type="radio" value="computer" />Computer
+          <input name="playType" type="radio" value="PlayerTwo" checked />Two
+          player
+        </form>
         <button id="start">Start</button>
       </div>
       <div class="layer result">
