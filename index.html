@@ -27,9 +27,9 @@
         <p id="playerTwoLable">Player Two:</p>
         <input type="text" class="field" id="playerTwoN" />
         <form id="myForm">
-          <input name="playType" type="radio" value="computer" />Computer
+          <input name="playType" type="radio" value="computer" />One Player
           <input name="playType" type="radio" value="PlayerTwo" checked />Two
-          player
+          players
         </form>
         <button id="start">Start</button>
       </div>
@@ -39,7 +39,16 @@
         <button id="playAgain">Play again</button>
       </div>
     </div>
+
+    <div class="options">
+      <h3>Computer Level</h3>
+      <form id="computerLevel">
+        <div><input name="level" type="radio" value="easy" />Easy</div>
+        <div><input name="level" type="radio" value="hard" checked />Hard</div>
+      </form>
+    </div>
     <div class="score"><h3>SCORES</h3></div>
+
     <audio id="tic" src="sound/tic.mp3"></audio>
     <audio id="woosh" src="sound/woosh.mp3"></audio>
     <audio id="win2" src="sound/win1.wav"></audio>

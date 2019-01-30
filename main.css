@@ -92,16 +92,27 @@ p {
   font-size: 25px;
   text-align: center;
 }
-
+.options {
+  display: none;
+  position: absolute;
+  /* left: 90px; */
+  top: 510px;
+  left: 50%;
+  /* margin: auto; */
+  /* z-index: -40; */
+  height: 150px;
+  width: 50%;
+  /* border: 2px solid yellow; */
+}
 .score {
   display: none;
   position: absolute;
   /* left: 90px; */
   top: 510px;
-  margin: auto;
+  /* margin: auto; */
   /* z-index: -40; */
   height: 150px;
-  width: 95%;
+  width: 50%;
   /* border: 2px solid red; */
 }
 
@@ -113,7 +124,16 @@ p {
   text-align: right;
   color: white;
 }
-.score h3 {
+.score h3,
+.options h3 {
   color: antiquewhite;
   text-align: center;
+}
+#computerLevel {
+  display: flex;
+  justify-content: space-evenly;
+}
+#computerLevel div {
+  font-size: 20px;
+  color: white;
 }
