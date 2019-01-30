@@ -38,6 +38,6 @@ making the game online using firebase.
 ## Acknowledgements
 
 Thanks for everyone in the class of GA-WDI and especially
-**Moath [https://github.com/mfalthaw]
-**MicFin [https://github.com/MicFin]
-\*\*Usman Bashir [https://github.com/usmanbashir]
+-**Moath [https://github.com/mfalthaw]**
+-**MicFin [https://github.com/MicFin]**
+-**Usman Bashir [https://github.com/usmanbashir]**
