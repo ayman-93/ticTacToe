@@ -183,10 +183,7 @@ function smart(first, second) {
   if (playCo === undefined) {
     playCo = imBad(first);
     if (playCo === undefined) {
-      if (!played.includes("4")) playCo = "4";
-      else if (!played.includes("2")) playCo = "2";
-      else if (!played.includes("6")) playCo = "6";
-      else if (!played.includes("8")) playCo = "8";
+      if (!played.includes("1")) playCo = "1";
       else playCo = dumy();
     }
   }
