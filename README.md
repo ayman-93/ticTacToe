@@ -25,7 +25,25 @@ let winPattrens = [
 ];
 ```
 
-than i use loops and ifs to retuen the right pattren ... I'm realy bad in writing :(
+than i use loops and ifs to retuen the right pattren
+
+```
+function checkWin(playerStack) {
+  let match = 0;
+  for (let win of winPattrens) {
+    for (let i = 0; i < playerStack.length; i++) {
+      if (win.includes(playerStack[i])) {
+        match++;
+        if (match === 3) {
+          gameOver = true;
+          return true;
+        }
+      }
+    }
+    match = 0;
+  }
+}
+```
 
 ## The Difficult Part Of The Project
 
