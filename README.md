@@ -6,6 +6,10 @@
 ![ScreenShot2](screenShots/2.png)
 ![ScreenShot3](screenShots/3.png)
 
+## Game Description
+
+Xs and Os, is a paper-and-pencil game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins the game.
+
 ## The Logic Of The Game
 
 I use for loops and arrays to find the right pattern of wins.
