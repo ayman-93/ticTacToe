@@ -297,9 +297,9 @@ function secondPlay(event, first, second) {
     } else if (tie(first, second)) {
       console.log("TIE");
     }
+    first.turn = true;
   }
   console.log("Turn changed to player one");
-  first.turn = true;
 }
 
 function play(event, first, second) {
