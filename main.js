@@ -17,7 +17,7 @@ let computer = {
   stack: [],
   wins: 0,
   turn: false,
-  level: "hard"
+  level: "Vhard"
 };
 let gameOver = false;
 let played = [];
@@ -232,6 +232,65 @@ function computerPlay(first, second) {
       }
     }
     console.log("Here is array ", canPlay);
+  } else if (computer.level === "Vhard") {
+    canPlay = smart(first, second);
+    console.log("vhard Smart");
+    if (canPlay === undefined) {
+      if (!played.includes("5")) {
+        canPlay = "5";
+        console.log("this one 5");
+      } else if (
+        !played.includes("2") &&
+        ((first.stack.includes("1") && first.stack.includes("9")) ||
+          (first.stack.includes("3") && first.stack.includes("7")) ||
+          (first.stack.includes("4") && first.stack.includes("3")) ||
+          (first.stack.includes("4") && first.stack.includes("9")) ||
+          (first.stack.includes("6") && first.stack.includes("7")))
+      ) {
+        console.log("22 vhard");
+        canPlay = "2";
+      } else if (
+        !played.includes("4") &&
+        ((first.stack.includes("8") && first.stack.includes("3")) ||
+          (first.stack.includes("8") && first.stack.includes("1")) ||
+          (first.stack.includes("2") && first.stack.includes("7")) ||
+          (first.stack.includes("2") && first.stack.includes("9")))
+      ) {
+        console.log("44 vhard");
+        canPlay = "4";
+      } else if (
+        !played.includes("3") &&
+        ((first.stack.includes("1") && first.stack.includes("6")) ||
+          (first.stack.includes("2") && first.stack.includes("6")))
+      ) {
+        console.log("333 vhard");
+        canPlay = "3";
+      } else if (
+        !played.includes("7") &&
+        (first.stack.includes("4") && first.stack.includes("8"))
+      ) {
+        console.log("777 vhard");
+        canPlay = "7";
+      } else if (
+        !played.includes("9") &&
+        (first.stack.includes("6") && first.stack.includes("8"))
+      ) {
+        console.log("999 vhard");
+        canPlay = "9";
+      } else if (
+        !played.includes("1") &&
+        ((first.stack.includes("4") && first.stack.includes("6")) ||
+          (first.stack.includes("2") && first.stack.includes("8")) ||
+          (first.stack.includes("2") && first.stack.includes("4")) ||
+          first.stack.includes("5"))
+      ) {
+        console.log("111 vhard");
+        canPlay = "1";
+      } else {
+        console.log("dumy in vhard");
+        canPlay = dumy();
+      }
+    }
   }
 
   if (!second.stack.includes(canPlay)) {
