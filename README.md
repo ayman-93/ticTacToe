@@ -8,9 +8,9 @@
 
 ## The Logic Of The Game
 
-I use for loops and arrays to find the right pattrin of wins.
+I use for loops and arrays to find the right pattern of wins.
 
-I defiend all the possible pattrins of win in an array like this:
+I defiend all the possible patterns of win in an array like this:
 
 ```
 let winPattrens = [
@@ -25,7 +25,7 @@ let winPattrens = [
 ];
 ```
 
-than i use loops and ifs to retuen the right pattren
+then I use loops and ifs to return the right pattern
 
 ```
 function checkWin(playerStack) {
