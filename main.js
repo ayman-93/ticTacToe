@@ -212,6 +212,9 @@ function dumy() {
 function computerPlay(first, second) {
   if (computer.level === "easy") {
     canPlay = dumy();
+  } else if (computer.level === "medium") {
+    canPlay = smart(first, second);
+    if (canPlay === undefined) canPlay = dumy();
   } else if (computer.level === "hard") {
     canPlay = smart(first, second);
     if (canPlay === undefined) {
