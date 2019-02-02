@@ -40,6 +40,22 @@ function checkWin(playerStack) {
       if (win.includes(playerStack[i])) {
         match++;
         if (match === 3) {
+          if ($(`#${win[0]}`).hasClass("o")) {
+            $(`#${win[0]}`).addClass("oWin");
+            $(`#${win[1]}`).addClass("oWin");
+            $(`#${win[2]}`).addClass("oWin");
+            console.log($("o[0]", $(`#${win[0]}`, `#${win[1]}`, `#${win[2]}`)));
+            console.log($(".o"));
+          } else {
+            $(`#${win[0]}`).addClass("xWin");
+            $(`#${win[1]}`).addClass("xWin");
+            $(`#${win[2]}`).addClass("xWin");
+            console.log(
+              "win pattren",
+              $(`#${win[0]}`, `#${win[1]}`, `#${win[2]}`)
+            );
+            console.log($(".x"));
+          }
           gameOver = true;
           return true;
         }
@@ -92,8 +108,8 @@ function playAgain(first, second) {
   played = [];
   gameOver = false;
 
-  $(".square").removeClass("x");
-  $(".square").removeClass("o");
+  $(".square").removeClass("x xWin");
+  $(".square").removeClass("o oWin");
   $(".result").slideUp();
   $("#scoreOne").replaceWith(
     `<p id='scoreOne'>${first.name}: ${first.wins}</p>`
